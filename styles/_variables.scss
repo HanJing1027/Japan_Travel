@@ -1,0 +1,23 @@
+// BG
+$headerBgColor: #ede7e2;
+// Btn
+$primaryBtnColor: #625b55;
+$hoverBtnColor: #a6998d;
+// text
+$textColor: #1e1e1e;
+$pSize: 1rem;
+$h1Size: 1.3rem;
+
+
+// mixin
+@mixin menuItem {
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: variables.$textColor;
+  position: relative;
+
+  &::after {
+    content: "";
+  }
+}
