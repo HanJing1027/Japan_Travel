@@ -158,3 +158,92 @@
   transform: rotate(180deg);
   opacity: 1;
 }
+
+
+@media screen and (min-width: 1118px) {
+  #header {
+    padding-inline: 5rem;
+  }
+
+  .container {
+    margin-inline: auto;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+
+    &__toggle {
+      display: none;
+    }
+
+    &__list {
+      height: 100%;
+      display: flex;
+      column-gap: 3rem;
+    }
+
+    &__link {
+      height: 100%;
+      padding: 0;
+      justify-content: initial;
+      column-gap: .3rem;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .dropdown {
+    position: relative;
+
+    &__menu {
+      width: 13rem;
+      max-height: initial;
+      overflow: initial;
+      position: absolute;
+      left: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s;
+    }
+
+    &__submenu {
+      width: 13rem;
+      position: absolute;
+      left: 100%;
+      top: .5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: top .3s;
+    }
+
+    &__link,
+    &__sublink {
+      padding-inline: 1rem;
+    }
+
+    &__subitem {
+      position: relative;
+
+      .dropdown__link {
+        padding-inline: 1rem;
+      }
+
+      &:hover > .dropdown__submenu {
+        opacity: 1;
+        top: 0;
+        pointer-events: initial;
+        transition: top .3s;
+      }
+    }
+
+    &:hover .dropdown__menu {
+      opacity: 1;
+      top: 3.5rem;
+      pointer-events: initial;
+      transition: top .3s;
+    }
+  }
+}
