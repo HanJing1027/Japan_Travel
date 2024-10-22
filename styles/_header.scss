@@ -1,2 +1,160 @@
-@use "./variables"
+@use "./variables";
 
+#header {
+    background-color: variables.$headerBgColor;
+    box-shadow: 0 2px 16px rgba(14, 18, 27, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    .container {
+      margin-inline: 2rem ;
+    }
+}
+
+.nav {
+  height: 3.5rem;  // = 56px
+
+  &__data {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    img {
+      width: 10rem;
+    }
+  }
+
+  &__toggle {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    .nav__open, .nav__close {
+      position: absolute;
+      color: variables.$fontColor;
+      font-size: 1.25rem;
+      text-align: center;
+      width: max-content;
+      height: max-content;
+      margin: auto;
+      inset: 0;
+      cursor: pointer;
+      transition: opacity .2s, transform .5s;
+    }
+    .nav__close {
+      opacity: 0;
+    }
+  }
+
+  // Nav Menu
+  @media screen and (max-width: 1118px) {
+    &__menu {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 3.5rem);
+      overflow: auto;
+      pointer-events: none;
+      opacity: 0;
+      top: 2.5rem;
+      transition: opacity .3s, top .3s ease-in-out;
+      .nav__list {
+        background-color: variables.$headerBgColor;
+        padding-top: 1rem;
+      }
+    }
+    &__menu::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: variables.$fontColor;
+    font-size: variables.$normalFontSize;
+    padding: 1.25rem;
+    font-weight: variables.$fontBold;
+    transition: background-color .15s ease-in-out;
+    &:hover {
+      background-color: variables.$headerBgHoverColor;
+    }
+  }
+}
+
+.dropdown {
+  cursor: pointer;
+
+  &__menu {
+    @include variables.doNotDisplay;
+  }
+
+  // Show dropdown menu
+  &:hover .dropdown__menu {
+    @include variables.showDropdownMenu;
+  }
+
+  &__arrow {
+    font-size: 1.25rem;
+    transition: transform .3s ease-in-out;
+  }
+
+  &:hover .dropdown__arrow {
+    transform: rotate(180deg);
+  }
+
+  &__link {
+    @include variables.menuIink (variables.$headerBgHoverColor, variables.$headerBgColor);
+    i {
+      font-size: 1.25rem;
+      font-weight: normal;
+    }
+  }
+}
+
+.dropdown__subitem {
+  .dropdown__add {
+    margin-left: auto;  // 可以根據內容調整
+  }
+  
+  .dropdown__submenu {
+    @include variables.doNotDisplay;
+  }
+  
+  // Show dropdown submenu
+  &:hover .dropdown__submenu {
+    @include variables.showDropdownMenu;
+  }
+
+  .dropdown__submenu {
+    .dropdown__sublink {
+      @include variables.menuIink(variables.$submenuBgColor, variables.$headerBgColor);
+      i {
+        font-size: 1.25rem;
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+// show menu (js)
+.show-menu {
+  opacity: 1;
+  top: 3.2rem;
+  pointer-events: initial;
+}
+// show icon
+.show-icon .nav__open {
+  opacity: 0;
+  transform: rotate(180deg);
+}
+.show-icon .nav__close {
+  transform: rotate(180deg);
+  opacity: 1;
+}

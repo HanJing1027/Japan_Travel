@@ -1,23 +1,38 @@
-// BG
-$headerBgColor: #ede7e2;
-// Btn
-$primaryBtnColor: #625b55;
-$hoverBtnColor: #a6998d;
-// text
-$textColor: #1e1e1e;
-$pSize: 1rem;
-$h1Size: 1.3rem;
+// header color
+$headerBgColor: #ffffff;
+$headerBgHoverColor: #d1cdca;
+$submenuBgColor: #e8e5e1;
+// font color
+$fontColor: #141413;
+// font size
+$normalFontSize: .938rem;
+// font weight
+$fontBold: 600;
 
-
-// mixin
-@mixin menuItem {
-  font-size: 1.1rem;
-  font-weight: 500;
+@mixin menuIink ($background-color, $hover-background-color) {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
   text-decoration: none;
-  color: variables.$textColor;
-  position: relative;
-
-  &::after {
-    content: "";
+  color: $fontColor;
+  font-weight: $fontBold;
+  font-size: $normalFontSize;
+  background-color: $background-color;
+  transition: background-color .15s ease-in-out;
+  padding: 1.25rem 2.5rem;
+  gap: .5rem;
+  &:hover {
+    background-color: $hover-background-color;
   }
+}
+
+@mixin doNotDisplay {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease-in-out;
+}
+
+@mixin showDropdownMenu {
+  max-height: 1000px;
+  transition: max-height .4s ease-in-out;
 }

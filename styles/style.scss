@@ -2,6 +2,7 @@
 @use "./variables";
 @use "./header";
 
-body { 
-  font-family: "Noto Sans TC", "Roboto", serif;
+html, body {
+  font-family: "Noto Sans TC", "Noto Sans JP", sans-serif;
+  background-color: tan;
 }
