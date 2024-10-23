@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="JP">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>header</title>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <!-- icon -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- css -->
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <!-- ================ Header ================ -->
+    <header id="header" class="header">
+      <nav class="nav container">
+  
+        <div class="nav__data">
+            <a href="#" class="nav__logo">
+              <img src="./images/logo_hakone.svg" alt="LOGO">
+            </a>
+  
+            <div class="nav__toggle" id="nav-toggle">
+              <i class="ri-menu-line nav__open"></i>
+              <i class="ri-close-line nav__close"></i>
+            </div>
+        </div>
+  
+        <!-- ================ Nav Menu ================ -->
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="#">ホーム</a></li>
+            <li><a class="nav__link" href="#">ホテル</a></li>
+            <!-- ================ Dropdown 1 ================ -->
+            <li  class="dropdown">
+              <div class="nav__link">
+                人気スポット<i class="ri-arrow-down-s-line dropdown__arrow"></i>
+              </div>
+  
+              <ul class="dropdown__menu">
+                <li><a class="dropdown__link" href="#"><i class="ri-camera-line"></i>観光地</a></li>
+                <li><div class="dropdown__link" href="#"><i class="ri-ancient-pavilion-line"></i>歴史名所</div></li>
+  
+                <!-- ================ Dropdown Submenu ================ -->
+                <li class="dropdown__subitem">
+                  <div class="dropdown__link">
+                    <i class="ri-landscape-line"></i>自然景観<i class="ri-add-line dropdown__add"></i>
+                  </div>
+  
+                  <ul class="dropdown__submenu">
+                     <li>
+                        <a href="#" class="dropdown__sublink">
+                          <i class="ri-landscape-fill"></i>ふじさん
+                        </a>
+                     </li>
+  
+                     <li>
+                        <a href="#" class="dropdown__sublink">
+                          <i class="ri-image-circle-fill"></i>しらかわごう
+                        </a>
+                     </li>
+  
+                     <li>
+                        <a href="#" class="dropdown__sublink">
+                          <i class="ri-image-line"></i>やくしま
+                        </a>
+                     </li>
+                  </ul>
+               </li>
+              </ul>
+            </li>
+  
+            <li><a class="nav__link" href="#">郷土料理</a></li>
+  
+            <!-- ================ Dropdown 2 ================ -->
+            <li class="dropdown">
+              <div class="nav__link">
+                温泉<i class="ri-arrow-down-s-line dropdown__arrow"></i>
+              </div>
+  
+              <ul class="dropdown__menu">
+                <li><a class="dropdown__link" href="#"><i class="ri-home-3-line"></i>露天風呂</a></li>
+                <li><a class="dropdown__link" href="#"><i class="ri-home-6-line"></i>温泉旅館</a></li>
+                <li><a class="dropdown__link" href="#"><i class="ri-home-line"></i>日帰り温泉 </a></li>
+              </ul>
+            </li>
+  
+            <li><a class="nav__link" href="#">アクセス</a></li>
+          </ul>
+        </div>
+  
+      </nav>
+    </header>
+    
+    <script src="/js/script.js"></script>
+</body>
+</html>

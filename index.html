@@ -3,101 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow"><!-- All Search Engines -->
+  <meta name="googlebot" content="index,follow"><!-- Google Specific -->
+  <meta name="author" content="HanJing">
   <title>Japan_Travel</title>
-  <!-- font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
-  <!-- icon -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-    rel="stylesheet"/>
-  <!-- css -->
-  <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-  <!-- ================ Header ================ -->
-  <header id="header" class="header">
-    <nav class="nav container">
+  <header id="header-placeholder"></header>
 
-      <div class="nav__data">
-          <a href="#" class="nav__logo">
-            <img src="./images/logo_hakone.svg" alt="LOGO">
-          </a>
+  <section class="section--bg section">
+    <div class="section__content">
+      <h1 class="section__title">大自然に包まれ，<span>自由を感じるキャンプの旅</span></h1>
+      <p class="section__text">大自然の中で、日常の喧騒から離れ、心も体も癒されるひとときを。星空の下、焚き火の温もりを感じながら、特別なアウトドア体験があなたを待っています</p>
+      <a class="section__btn" href="#">
+        <span>ここから始める</span>
+      </a>
+    </div>
+  </section>
 
-          <div class="nav__toggle" id="nav-toggle">
-            <i class="ri-menu-line nav__open"></i>
-            <i class="ri-close-line nav__close"></i>
-          </div>
+  <h2 class="secondary__title">キャンプをもっと楽しもう</h2>
+  <section class="features">
+    <div class="features__item">
+      <div class="features__header">
+        <i class="fa-solid fa-person-walking"></i>
+        <h5 class="features__title">自然散策</h5>
       </div>
-
-      <!-- ================ Nav Menu ================ -->
-      <div class="nav__menu" id="nav-menu">
-        <ul class="nav__list">
-          <li><a class="nav__link" href="#">ホーム</a></li>
-          <li><a class="nav__link" href="#">ホテル</a></li>
-          <!-- ================ Dropdown 1 ================ -->
-          <li  class="dropdown">
-            <div class="nav__link">
-              人気スポット<i class="ri-arrow-down-s-line dropdown__arrow"></i>
-            </div>
-
-            <ul class="dropdown__menu">
-              <li><a class="dropdown__link" href="#"><i class="ri-camera-line"></i>観光地</a></li>
-              <li><div class="dropdown__link" href="#"><i class="ri-ancient-pavilion-line"></i>歴史名所</div></li>
-
-              <!-- ================ Dropdown Submenu ================ -->
-              <li class="dropdown__subitem">
-                <div class="dropdown__link">
-                  <i class="ri-landscape-line"></i>自然景観<i class="ri-add-line dropdown__add"></i>
-                </div>
-
-                <ul class="dropdown__submenu">
-                   <li>
-                      <a href="#" class="dropdown__sublink">
-                        <i class="ri-landscape-fill"></i>ふじさん
-                      </a>
-                   </li>
-
-                   <li>
-                      <a href="#" class="dropdown__sublink">
-                        <i class="ri-image-circle-fill"></i>しらかわごう
-                      </a>
-                   </li>
-
-                   <li>
-                      <a href="#" class="dropdown__sublink">
-                        <i class="ri-image-line"></i>やくしま
-                      </a>
-                   </li>
-                </ul>
-             </li>
-            </ul>
-          </li>
-
-          <li><a class="nav__link" href="#">郷土料理</a></li>
-
-          <!-- ================ Dropdown 2 ================ -->
-          <li class="dropdown">
-            <div class="nav__link">
-              温泉<i class="ri-arrow-down-s-line dropdown__arrow"></i>
-            </div>
-
-            <ul class="dropdown__menu">
-              <li><a class="dropdown__link" href="#"><i class="ri-home-3-line"></i>露天風呂</a></li>
-              <li><a class="dropdown__link" href="#"><i class="ri-home-6-line"></i>温泉旅館</a></li>
-              <li><a class="dropdown__link" href="#"><i class="ri-home-line"></i>日帰り温泉 </a></li>
-            </ul>
-          </li>
-
-          <li><a class="nav__link" href="#">アクセス</a></li>
-        </ul>
+      <p>大自然の美しい景色を楽しみながら、心と体をリフレッシュさせるリラックスした散策を楽しみましょう。緑豊かな森林や美しい川辺を歩くことで、自然の魅力を存分に感じられます。近くのトレッキングコースや散歩道を詳しくご紹介します。</p>
+    </div>
+    <div class="features__item">
+      <div class="features__header">
+        <i class="fa-solid fa-fire-burner"></i>
+        <h5 class="features__title">アウトドア料理</h5>
       </div>
-
-    </nav>
-  </header>
+      <p>焚き火を囲んで、暖かい炎の下、家族や友人と一緒に特別な料理を作りましょう。薪の音を聞きながら、自然の中で楽しむ食事は格別です。簡単で美味しいレシピをご提供し、アウトドアでの調理をより楽しく、思い出に残るひとときにします。</p>
+    </div>
+    <div class="features__item">
+      <div class="features__header">
+        <i class="fa-solid fa-tents"></i>
+        <h5 class="features__title">星空観察</h5>
+      </div>
+      <p>自然の中で、夜空に広がる無数の星を見上げて、心を癒しましょう。静かな夜に満天の星々を眺める体験は、日常の疲れを忘れさせてくれます。私たちは、星空が最も美しく見えるおすすめの観察スポットや、季節ごとに見られる星座の情報も詳しくご紹介します。</p>
+    </div>
+  </section>
 
   <!-- js -->
-   <script src="./js/script.js"></script>
+  <script src="/js/script.js"></script>
 </body>
 </html>

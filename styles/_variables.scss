@@ -1,13 +1,33 @@
 // header color
 $headerBgColor: #ffffff;
-$headerBgHoverColor: #e8e5e1;
-$submenuBgColor: #d1cdca;
+$headerBtnHoverColor: #e8e5e1;
+$submenuBtnColor: #d1cdca;
+// main
+$mainBtnColor: #000000;
+
 // font color
 $fontColor: #141413;
+$SecondaryTextColor: #30302f;
 // font size
-$normalFontSize: .938rem;
+$titleFontSize: 3rem;
+$secondaryTitleSize: 2rem;
+$secondaryTextSize: 1.3rem;
+$normalFontSize: 0.938rem;
 // font weight
 $fontBold: 600;
+
+// animation
+$animationText: title 1.5s ease-in-out;
+@keyframes title {
+  0% {
+    opacity: 0;
+    transform: translate(30%, 0);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 
 @mixin menuIink ($background-color, $hover-background-color) {
   display: flex;

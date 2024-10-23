@@ -1,8 +1,11 @@
 @use "./reset";
 @use "./variables";
 @use "./header";
+@use "./main";
 
 html, body {
   font-family: "Noto Sans TC", "Noto Sans JP", sans-serif;
-  background-color: tan;
+  background-image: url(/images/bodybg.jpg);
+  background-position: center;
+  background-size: cover;
 }
