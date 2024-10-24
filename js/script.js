@@ -30,3 +30,23 @@ window.addEventListener("load", () => {
     elements[i].style.animationPlayState = "running";
   }
 });
+
+window.addEventListener("scroll", () => {
+  const features = document.querySelector(".features");
+  const featuresRect = features.getBoundingClientRect();
+  if (featuresRect.top < window.innerHeight && featuresRect.bottom >= 0) {
+    const featuresItem = document.querySelectorAll(".features__item");
+    featuresItem.forEach((i) => {
+      i.style.animationPlayState = "running";
+    });
+  }
+
+  const card = document.querySelector(".tour__list");
+  const cardRect = card.getBoundingClientRect();
+  if (cardRect.top < window.innerHeight && cardRect.bottom >= 0) {
+    const tourCard = document.querySelectorAll(".tour__item");
+    tourCard.forEach((e) => {
+      e.style.animationPlayState = "running";
+    });
+  }
+});

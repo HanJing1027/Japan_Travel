@@ -1,13 +1,14 @@
-// header color
+// color
 $headerBgColor: #ffffff;
 $headerBtnHoverColor: #e8e5e1;
 $submenuBtnColor: #d1cdca;
-// main
 $mainBtnColor: #000000;
-
+$tagBtnColor: #dfdcdc;
+$tagBtnHoverColor: #482c00;
 // font color
 $fontColor: #141413;
 $SecondaryTextColor: #30302f;
+$SecondaryTitleColor: #482c00;
 // font size
 $titleFontSize: 3rem;
 $secondaryTitleSize: 2rem;
@@ -16,23 +17,24 @@ $normalFontSize: 0.938rem;
 // font weight
 $fontBold: 600;
 
-// animation
-$animationTextTransform: text-translate 1.5s ease forwards;
-@keyframes text-translate {
+// -------------- animation
+$animationTitle: title 1.5s ease-in-out forwards;
+@keyframes title {
   0% {
     opacity: 0;
-    transform: translate(30%, 0);
+    transform: translate(30px, 0);
   }
   100% {
     opacity: 1;
   }
 }
 
-$animationTextOpacity: text-opacity 1.5s ease forwards;
-@keyframes text-opacity {
+$animationSecondaryTitle: secondary-title 1.5s ease-in-out forwards;
+@keyframes secondary-title {
   0% {
-    
+    visibility: hidden;  //初始狀態不可見
     opacity: 0;
+    transform: translate(0, 20px);
   }
   100% {
     visibility: visible;  //最終狀態可見
@@ -40,6 +42,33 @@ $animationTextOpacity: text-opacity 1.5s ease forwards;
   }
 }
 
+$animationItem: item 1.5s ease-in-out forwards;
+@keyframes item {
+  0% {
+    transform: translate(0, 20px);
+    opacity: 0;
+    visibility: hidden; //初始狀態不可見
+  }
+  100% {
+    opacity: 1;
+    visibility: visible; //最終狀態可見
+  }
+}
+
+$animationCard: card 2s ease-in-out forwards;
+@keyframes card {
+  0% {
+    opacity: 0;
+    visibility: hidden; //初始狀態不可見
+  }
+  100% {
+    opacity: 1;
+    visibility: visible; //最終狀態可見
+  }
+}
+// -------------- animation end
+
+// mixin
 @mixin menuIink ($background-color, $hover-background-color) {
   display: flex;
   cursor: pointer;
@@ -66,4 +95,29 @@ $animationTextOpacity: text-opacity 1.5s ease forwards;
 @mixin showDropdownMenu {
   max-height: 1000px;
   transition: max-height .4s ease-in-out;
+}
+
+@mixin mainItem ($itemWidth) {
+  width: $itemWidth;
+  background-color: #fffbf5;
+  padding: 1.25rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(14, 18, 27, 0.2);
+}
+
+@mixin tagBtn {
+  padding: .6rem;
+  border: none;
+  border-radius: 20px;
+  background-color: $tagBtnColor;
+  text-decoration: none;
+  color: $fontColor;
+  font-size: $normalFontSize;
+  font-weight: $fontBold;
+  cursor: pointer;
+  transition: all .1s ease-in-out;
+  &:hover {
+    color: #FFFFFF;
+    background-color: $tagBtnHoverColor;
+  }
 }

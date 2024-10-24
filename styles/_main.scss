@@ -29,17 +29,17 @@
     font-size: variables.$titleFontSize;
     font-weight: variables.$fontBold;
     line-height: 1.3;
-    animation: variables.$animationTextTransform;
+    animation: variables.$animationTitle;
     span {
       display: flex;
       flex-wrap: wrap;
-      color: #482c00;
-      animation: variables.$animationTextTransform;
+      color: variables.$SecondaryTitleColor;
+      animation: variables.$animationTitle;
     }
   }
   &__text, &__btn {
     opacity: 0;
-    visibility: hidden; //狀態不可見
+    visibility: hidden; //隱藏
     animation-play-state: paused; //停止動畫
   }
   &__text {
@@ -48,7 +48,7 @@
     font-size: variables.$normalFontSize; 
     font-weight: 500;
     margin: 1rem 0 3rem 0;
-    animation: variables.$animationTextOpacity;
+    animation: variables.$animationSecondaryTitle;
     animation-delay: .5s;
   }
   &__btn {
@@ -63,7 +63,7 @@
     letter-spacing: 1px;
     padding: 10px 20px;
     border: none;
-    animation: variables.$animationTextOpacity;
+    animation: variables.$animationSecondaryTitle;
     animation-delay: .5s;
     span {
       position: relative;
@@ -88,8 +88,8 @@
 }
 
 .secondary__title {
-  text-align: center;
-  color: #482c00;
+  text-align: start;
+  color: variables.$SecondaryTitleColor;
   font-size: variables.$secondaryTitleSize;
   font-weight: variables.$fontBold;
   padding: 0 7rem;
@@ -103,19 +103,19 @@
   padding: 0 7rem;
   margin: 4rem 0 8rem;
   &__item {
-    width: 33.33%;
-    background-color: #fffbf5;
-    padding: 1.25rem;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(14, 18, 27, 0.2);
-    transition: box-shadow 0.4s ease, transform 0.4s ease-in-out;
+    @include variables.mainItem (33.33%);
+    animation: variables.$animationItem;
+    transition: box-shadow 0.4s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    animation-play-state: paused;
     &:hover {
-      transform: translate(0, -15px);
       box-shadow: none;
     }
     p {
-      line-height: 1.3;
+      line-height: 1.5;
       font-size: variables.$normalFontSize;
+      color: variables.$fontColor;
     }
   }
 
@@ -128,10 +128,111 @@
       font-size: variables.$secondaryTextSize;
       font-weight: variables.$fontBold;
       margin-bottom: 1rem;
+      color: variables.$SecondaryTitleColor;
     }
   }
 }
 
+.tour {
+  margin: 4rem 0 8rem;
+  padding: 0 7rem;
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: .8rem;
+    margin-bottom: 3rem;
+    a {
+      @include variables.tagBtn;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 1.5rem;
+  }
+  &__item {
+    @include variables.mainItem (25%);
+    animation: variables.$animationCard;
+    visibility: hidden;
+    opacity: 0;
+    animation-play-state: paused;
+    transition: transform 0.4s ease-in-out;
+    &:hover {
+      transform: translate(0, -5px);
+    }
+    img {
+      border-radius: 18px;
+      opacity: .9;
+      transition: all .4s ease-in-out;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__data {
+    p {
+      color: variables.$fontColor;
+      font-size: variables.$normalFontSize;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: .5rem;
+    h5,i {
+      margin: 1rem 0;
+      color: variables.$SecondaryTitleColor;
+      font-size: variables.$secondaryTextSize;
+      font-weight: variables.$fontBold;
+    }
+  }
+
+  &__tag {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 1.8rem;
+    &::after {
+      content: "";
+      position: absolute;
+      top: -13px;
+      width: 100%;
+      height: 1px;
+      background-color: #4d4d4d1b;
+    }
+    &--btn {
+      @include variables.tagBtn;
+    }
+    &--link {
+      color: variables.$SecondaryTitleColor;
+      text-decoration: none;
+      font-size: variables.$normalFontSize;
+      font-weight: variables.$fontBold;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        height: 2px;
+        background-color: variables.$SecondaryTitleColor;
+        transition: all 0.2s ease-in-out;
+      }
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+}
 
 @media (max-width: 1250px) {
   
