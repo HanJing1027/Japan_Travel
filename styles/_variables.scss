@@ -17,8 +17,8 @@ $normalFontSize: 0.938rem;
 $fontBold: 600;
 
 // animation
-$animationText: title 1.5s ease-in-out;
-@keyframes title {
+$animationTextTransform: text-translate 1.5s ease forwards;
+@keyframes text-translate {
   0% {
     opacity: 0;
     transform: translate(30%, 0);
@@ -28,6 +28,17 @@ $animationText: title 1.5s ease-in-out;
   }
 }
 
+$animationTextOpacity: text-opacity 1.5s ease forwards;
+@keyframes text-opacity {
+  0% {
+    
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;  //最終狀態可見
+    opacity: 1;
+  }
+}
 
 @mixin menuIink ($background-color, $hover-background-color) {
   display: flex;

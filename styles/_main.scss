@@ -29,13 +29,18 @@
     font-size: variables.$titleFontSize;
     font-weight: variables.$fontBold;
     line-height: 1.3;
-    animation: variables.$animationText;
+    animation: variables.$animationTextTransform;
     span {
       display: flex;
       flex-wrap: wrap;
       color: #482c00;
-      animation: variables.$animationText;
+      animation: variables.$animationTextTransform;
     }
+  }
+  &__text, &__btn {
+    opacity: 0;
+    visibility: hidden; //狀態不可見
+    animation-play-state: paused; //停止動畫
   }
   &__text {
     line-height: 1.5;
@@ -43,6 +48,8 @@
     font-size: variables.$normalFontSize; 
     font-weight: 500;
     margin: 1rem 0 3rem 0;
+    animation: variables.$animationTextOpacity;
+    animation-delay: .5s;
   }
   &__btn {
     text-decoration: none;
@@ -56,6 +63,8 @@
     letter-spacing: 1px;
     padding: 10px 20px;
     border: none;
+    animation: variables.$animationTextOpacity;
+    animation-delay: .5s;
     span {
       position: relative;
       color: #FFFFFF;
@@ -80,7 +89,7 @@
 
 .secondary__title {
   text-align: center;
-  color: variables.$fontColor;
+  color: #482c00;
   font-size: variables.$secondaryTitleSize;
   font-weight: variables.$fontBold;
   padding: 0 7rem;
@@ -99,9 +108,9 @@
     padding: 1.25rem;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(14, 18, 27, 0.2);
-    transition: box-shadow 0.3s ease, transform 0.4s ease-in-out;
+    transition: box-shadow 0.4s ease, transform 0.4s ease-in-out;
     &:hover {
-      transform: translate(0, -20%);
+      transform: translate(0, -15px);
       box-shadow: none;
     }
     p {
