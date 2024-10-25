@@ -78,6 +78,7 @@
       border-radius: 50px;
       transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
+    &:focus::before,
     &:hover::before {
       background-color: variables.$mainBtnColor;
       width: 100%;
@@ -107,7 +108,8 @@
     visibility: hidden;
     opacity: 0;
     animation-play-state: paused;
-    &:hover {
+    &:hover,
+    &:focus {
       box-shadow: none;
     }
     p {
@@ -142,6 +144,7 @@
     margin-bottom: 3rem;
     a {
       @include variables.tagBtn;
+      z-index: 1;
     }
   }
 
@@ -157,7 +160,8 @@
     opacity: 0;
     animation-play-state: paused;
     transition: transform 0.4s ease-in-out;
-    &:hover {
+    &:hover,
+    &:focus {
       transform: translate(0, -5px);
     }
     img {
@@ -208,6 +212,7 @@
     }
     &--btn {
       @include variables.tagBtn;
+      z-index: 1;
     }
     &--link {
       color: variables.$SecondaryTitleColor;
@@ -225,7 +230,8 @@
         background-color: variables.$SecondaryTitleColor;
         transition: all 0.2s ease-in-out;
       }
-      &:hover::after {
+      &:hover::after,
+      &:focus::after {
         width: 100%;
       }
     }
@@ -239,8 +245,57 @@
 .view__more {
   width: max-content;
   margin: 0 auto;
-  a {
-    @include variables.tagBtn;
+
+  i {
+    margin-left: .3rem;
+    animation: arrow 1.5s linear infinite;
+    @keyframes arrow {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(5px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  a,
+  a:focus {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    border: 2px solid variables.$SecondaryTitleColor;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: variables.$SecondaryTitleColor;
+    font-weight: variables.$fontBold;
+    font-size: variables.$normalFontSize;
+    overflow: hidden;  // 隱藏超出的部分
+    text-shadow: 0 0 500px variables.$SecondaryTitleColor;
+    text-decoration: none;
+    transition: all .6s ease-in-out;
+    &::after {
+      content: '';
+      position: absolute;
+      height: 0%;
+      left: 59%;
+      top: 50%;
+      width: 150%;
+      z-index: -1;
+      background-color: variables.$tagBtnHoverColor;
+      transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+      transition: all .75s ease 0s;
+    }
+    &:hover {
+      color: #FFFFFF;
+    }
+    &:hover::after {
+      height: 450%;
+    }
   }
 }
 

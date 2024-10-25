@@ -100,7 +100,8 @@
   }
 
   // Show dropdown menu
-  &:hover .dropdown__menu {
+  &:hover .dropdown__menu,
+  &:focus .dropdown__menu {
     @include variables.showDropdownMenu;
   }
 
@@ -193,7 +194,8 @@
       justify-content: initial;
       column-gap: .3rem;
 
-      &:hover {
+      &:hover,
+      &:focus {
         background-color: transparent;
       }
     }
@@ -235,7 +237,8 @@
         padding-inline: 1rem;
       }
 
-      &:hover > .dropdown__submenu {
+      &:hover > .dropdown__submenu,
+      &:focus > .dropdown__submenu {
         opacity: 1;
         top: 0;
         pointer-events: initial;
@@ -243,7 +246,8 @@
       }
     }
 
-    &:hover .dropdown__menu {
+    &:hover .dropdown__menu,
+    &:focus .dropdown__menu {
       opacity: 1;
       top: 3.5rem;
       pointer-events: initial;
