@@ -18,8 +18,8 @@
   height: calc(100vh - 30px);
 
   &__content {
-    width: 750px;
-    margin-left: 7rem;
+    width: 900px;
+    padding: 0 7rem;
   }
 
   &__title {
@@ -104,10 +104,10 @@
   &__item {
     @include variables.mainItem (33.33%);
     animation: variables.$animationItem;
-    transition: box-shadow 0.4s ease-in-out;
     visibility: hidden;
     opacity: 0;
     animation-play-state: paused;
+    transition: box-shadow 0.4s ease-in-out;
     &:hover,
     &:focus {
       box-shadow: none;
@@ -156,19 +156,20 @@
   &__item {
     @include variables.mainItem (25%);
     animation: variables.$animationCard;
-    visibility: hidden;
     opacity: 0;
     animation-play-state: paused;
-    transition: transform 0.4s ease-in-out;
-    &:hover,
-    &:focus {
-      transform: translate(0, -5px);
-    }
+  }
+
+  &__img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
     img {
       border-radius: 18px;
       opacity: .9;
-      transition: all .4s ease-in-out;
+      transition: all .6s ease;
       &:hover {
+        transform: scale(1.1);
         opacity: 1;
       }
     }
@@ -246,24 +247,14 @@
   width: max-content;
   margin: 0 auto;
 
-  i {
+  .arrow__animation {
     margin-left: .3rem;
-    animation: arrow 1.5s linear infinite;
-    @keyframes arrow {
-      0% {
-        transform: translateX(0);
-      }
-      50% {
-        transform: translateX(5px);
-      }
-      100% {
-        transform: translateX(0);
-      }
-    }
+    animation: variables.$animationArrow;
+    animation-play-state: paused;
   }
 
-  a,
-  a:focus {
+  .view__btn,
+  .view__btn:focus {
     display: inline-block;
     cursor: pointer;
     position: relative;
@@ -290,10 +281,12 @@
       transform: translateX(-50%) translateY(-50%) rotate(-25deg);
       transition: all .75s ease 0s;
     }
-    &:hover {
+    &:hover,
+    &:focus {
       color: #FFFFFF;
     }
-    &:hover::after {
+    &:hover::after,
+    &:focus::after {
       height: 450%;
     }
   }
@@ -310,6 +303,14 @@
     align-items: center;
     @include variables.mainItem (24%);
     column-gap: 1.5rem;
+    animation: variables.$animationCard;
+    animation-play-state: paused;
+    opacity: 0;
+    transition: box-shadow 0.4s ease-in-out;
+    &:hover,
+    &:focus {
+      box-shadow: none;
+    }
     img {
       width: 5rem;
     }
@@ -328,6 +329,161 @@
   }
 }
 
-@media (max-width: 1250px) {
+@media screen and (max-width: 1490px) {
+  .main__content,
+  .features,
+  .tour,
+  .guide,
+  .secondary__title {
+    padding: 0 2rem;
+  }
+  // features
+  .features {
+    column-gap: 1rem;
+    p {
+      font-size: .8rem;
+    }
+  }
+
+  // tour
+  .tour__list {
+    flex-wrap: wrap;
+    row-gap: 2rem;
+    justify-content: space-between;
+  }
+  .tour__item {
+    width: 48%;
+  }
+  .tour__img {
+    display: flex;
+    justify-content: center;
+    img {
+      opacity: 1;
+      width: 100%;
+    }
+  }
+
+  // guide
+  .guide {
+    flex-wrap: wrap;
+    row-gap: 2rem;
+  }
+  .guide__item {
+    width: 48%;
+  }
+  .guide__content {
+    h4 {
+      font-size: .8rem;
+    }
+    p {
+      font-size: .8rem;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+    // features
+    .features {
+      row-gap: 2rem;
+      flex-wrap: wrap;
+      flex-direction: column;
+      &__item {
+        width: 100%;
+      }
+    }
+}
+
+@media screen and (max-width: 768px) {
+  .main__content,
+  .features,
+  .tour,
+  .guide,
+  .secondary__title {
+    padding: 0 1rem;
+  }
   
+  .secondary__title {
+    font-size: 1.8rem;
+  }
+
+  // main
+  .main__content {
+    .main__title {
+      font-size: 2.2rem;
+    }
+    p {
+      font-size: .8rem;
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .secondary__title {
+    font-size: 1.2rem;
+  }
+
+  // main
+  .main__content {
+    .main__title {
+      font-size: 1.6rem;
+    }
+    p {
+      width: 100%;
+      font-size: .7rem;
+    }
+  }
+
+  // features
+  .features__item {
+    p {
+      font-size: .65rem;
+    }
+    .features__header {
+      i, h5 {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  // tour
+  .tour {
+    .tour__btn {
+      flex-wrap: wrap;
+      row-gap: 1rem;
+      a {
+        font-size: .8rem;
+      }
+    }
+  }
+  
+  .tour__list {
+    .tour__item {
+      width: 100%;
+    }
+    .tour__tag {
+      a {
+        font-size: .8rem;
+      }
+    }
+  }
+  
+  .tour__data {
+    .tour__info {
+      h5,i {
+        font-size: 1rem;
+      }
+    }
+    p {
+      font-size: .8rem;
+    }
+  }
+
+  // guide
+  .guide {
+    flex-direction: column;
+    &__item {
+      width: 100%;
+    }
+  }
 }

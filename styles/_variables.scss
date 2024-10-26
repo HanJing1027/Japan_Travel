@@ -1,5 +1,6 @@
 // color
 $headerBgColor: #ffffff;
+$footerBgColor: #50310056;
 $headerBtnHoverColor: #e8e5e1;
 $submenuBtnColor: #d1cdca;
 $mainBtnColor: #000000;
@@ -64,6 +65,19 @@ $animationCard: card 2s ease-in-out forwards;
   100% {
     opacity: 1;
     visibility: visible; //最終狀態可見
+  }
+}
+
+$animationArrow: arrow-move 1.2s linear infinite;
+@keyframes arrow-move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 // -------------- animation end
