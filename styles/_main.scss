@@ -255,7 +255,7 @@
 
   .view__btn,
   .view__btn:focus {
-    display: inline-block;
+    display: inline-block; //******
     cursor: pointer;
     position: relative;
     z-index: 1;
