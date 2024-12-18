@@ -1,32 +1,34 @@
 @use "./variables";
 
 #header {
-    background-color: variables.$headerBgColor;
-    box-shadow: 0 4px 8px rgba(14, 18, 27, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    .container {
-      margin-inline: 2rem ;
-    }
+  background-color: variables.$headerBgColor;
+  box-shadow      : 0 4px 8px rgba(14, 18, 27, 0.1);
+  position        : fixed;
+  top             : 0;
+  left            : 0;
+  width           : 100%;
+  z-index         : 100;
+
+  .container {
+    margin-inline: 2rem;
+  }
 }
 
 .nav {
-  height: 3.5rem;  // = 56px
+  height: 3.5rem; // = 56px
 
   &__data {
-    height: 100%;
-    display: flex;
-    align-items: center;
+    height         : 100%;
+    display        : flex;
+    align-items    : center;
     justify-content: space-between;
   }
 
   &__logo {
     img {
-      width: 10rem;
-      transition: opacity .25s ease-in-out ;
+      width     : 10rem;
+      transition: opacity .25s ease-in-out;
+
       &:hover {
         opacity: .8;
       }
@@ -35,20 +37,23 @@
 
   &__toggle {
     position: relative;
-    width: 32px;
-    height: 32px;
-    .nav__open, .nav__close {
-      position: absolute;
-      color: variables.$fontColor;
-      font-size: 1.25rem;
+    width   : 32px;
+    height  : 32px;
+
+    .nav__open,
+    .nav__close {
+      position  : absolute;
+      color     : variables.$fontColor;
+      font-size : 1.25rem;
       text-align: center;
-      width: max-content;
-      height: max-content;
-      margin: auto;
-      inset: 0;
-      cursor: pointer;
+      width     : max-content;
+      height    : max-content;
+      margin    : auto;
+      inset     : 0;
+      cursor    : pointer;
       transition: opacity .2s, transform .5s;
     }
+
     .nav__close {
       opacity: 0;
     }
@@ -57,35 +62,38 @@
   // Nav Menu
   @media screen and (max-width: 1118px) {
     &__menu {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: calc(100vh - 3.5rem);
-      overflow: auto;
+      position      : absolute;
+      left          : 0;
+      width         : 100%;
+      height        : calc(100vh - 3.5rem);
+      overflow      : auto;
       pointer-events: none;
-      opacity: 0;
-      top: 2.5rem;
-      transition: opacity .3s, top .3s ease-in-out;
+      opacity       : 0;
+      top           : 2.5rem;
+      transition    : opacity .3s, top .3s ease-in-out;
+
       .nav__list {
         background-color: variables.$headerBgColor;
-        padding-top: 1rem;
+        padding-top     : 1rem;
       }
     }
+
     &__menu::-webkit-scrollbar {
       width: 0;
     }
   }
 
   &__link {
-    display: flex;
+    display        : flex;
     justify-content: space-between;
-    align-items: center;
+    align-items    : center;
     text-decoration: none;
-    color: variables.$fontColor;
-    font-size: variables.$normalFontSize;
-    padding: 1.25rem;
-    font-weight: variables.$fontBold;
-    transition: background-color .15s ease-in-out;
+    color          : variables.$fontColor;
+    font-size      : variables.$normalFontSize;
+    padding        : 1.25rem;
+    font-weight    : variables.$fontBold;
+    transition     : background-color .15s ease-in-out;
+
     &:hover {
       background-color: variables.$headerBtnHoverColor;
     }
@@ -106,7 +114,7 @@
   }
 
   &__arrow {
-    font-size: 1.25rem;
+    font-size : 1.25rem;
     transition: transform .3s ease-in-out;
   }
 
@@ -116,8 +124,9 @@
 
   &__link {
     @include variables.menuIink (variables.$headerBtnHoverColor, variables.$headerBgColor);
+
     i {
-      font-size: 1.25rem;
+      font-size  : 1.25rem;
       font-weight: normal;
     }
   }
@@ -125,13 +134,13 @@
 
 .dropdown__subitem {
   .dropdown__add {
-    margin-left: auto;  // 可以根據內容調整
+    margin-left: auto; // 可以根據內容調整
   }
-  
+
   .dropdown__submenu {
     @include variables.doNotDisplay;
   }
-  
+
   // Show dropdown submenu
   &:hover .dropdown__submenu {
     @include variables.showDropdownMenu;
@@ -140,8 +149,9 @@
   .dropdown__submenu {
     .dropdown__sublink {
       @include variables.menuIink(variables.$submenuBtnColor, variables.$headerBgColor);
+
       i {
-        font-size: 1.25rem;
+        font-size  : 1.25rem;
         font-weight: normal;
       }
     }
@@ -150,18 +160,20 @@
 
 // show menu (js)
 .show-menu {
-  opacity: 1;
-  top: 3.2rem;
+  opacity       : 1;
+  top           : 3.2rem;
   pointer-events: initial;
 }
+
 // show icon
 .show-icon .nav__open {
-  opacity: 0;
+  opacity  : 0;
   transform: rotate(180deg);
 }
+
 .show-icon .nav__close {
   transform: rotate(180deg);
-  opacity: 1;
+  opacity  : 1;
 }
 
 
@@ -175,7 +187,7 @@
   }
 
   .nav {
-    display: flex;
+    display        : flex;
     justify-content: space-between;
 
     &__toggle {
@@ -183,16 +195,16 @@
     }
 
     &__list {
-      height: 100%;
-      display: flex;
+      height    : 100%;
+      display   : flex;
       column-gap: 3rem;
     }
 
     &__link {
-      height: 100%;
-      padding: 0;
+      height         : 100%;
+      padding        : 0;
       justify-content: initial;
-      column-gap: .3rem;
+      column-gap     : .3rem;
 
       &:hover,
       &:focus {
@@ -205,24 +217,24 @@
     position: relative;
 
     &__menu {
-      width: 13rem;
-      max-height: initial;
-      overflow: initial;
-      position: absolute;
-      left: 0;
-      opacity: 0;
+      width         : 13rem;
+      max-height    : initial;
+      overflow      : initial;
+      position      : absolute;
+      left          : 0;
+      opacity       : 0;
       pointer-events: none;
-      transition: opacity .3s;
+      transition    : opacity .3s;
     }
 
     &__submenu {
-      width: 13rem;
-      position: absolute;
-      left: 100%;
-      top: .5rem;
-      opacity: 0;
+      width         : 13rem;
+      position      : absolute;
+      left          : 100%;
+      top           : .5rem;
+      opacity       : 0;
       pointer-events: none;
-      transition: top .3s;
+      transition    : top .3s;
     }
 
     &__link,
@@ -237,21 +249,21 @@
         padding-inline: 1rem;
       }
 
-      &:hover > .dropdown__submenu,
-      &:focus > .dropdown__submenu {
-        opacity: 1;
-        top: 0;
+      &:hover>.dropdown__submenu,
+      &:focus>.dropdown__submenu {
+        opacity       : 1;
+        top           : 0;
         pointer-events: initial;
-        transition: top .3s;
+        transition    : top .3s;
       }
     }
 
     &:hover .dropdown__menu,
     &:focus .dropdown__menu {
-      opacity: 1;
-      top: 3.5rem;
+      opacity       : 1;
+      top           : 3.5rem;
       pointer-events: initial;
-      transition: top .3s;
+      transition    : top .3s;
     }
   }
 }
