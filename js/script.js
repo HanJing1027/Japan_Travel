@@ -67,7 +67,7 @@ const startAnimation = (selector) => {
 };
 // 加載時啟動初始動畫
 window.addEventListener("load", () => {
-  startAnimation("main__title, main__text, main__btn");
+  startAnimation(".main__title, .main__text, .main__btn");
 });
 // 滾動檢查元素是否在視窗中
 window.addEventListener("scroll", () => {
