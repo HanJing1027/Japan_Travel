@@ -4,9 +4,10 @@
 @use "./main";
 @use "./footer";
 
-html, body {
-  font-family: "Noto Sans TC", "Noto Sans JP", sans-serif;
-  background-image: url(/images/bodybg.jpg);
+html,
+body {
+  font-family        : "Noto Sans TC", "Noto Sans JP", sans-serif;
+  background-image   : url(/images/bodybg.jpg);
   background-position: center;
-  background-size: cover;
+  background-size    : cover;
 }
